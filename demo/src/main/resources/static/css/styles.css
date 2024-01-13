@@ -210,3 +210,11 @@ Footer Styles
     width: 300px;
     margin-left: 140px;
 }
+
+img {
+    vertical-align: middle;
+    border-style: solid black 1px;
+    height: 200px;
+    width: 300px;
+    margin-bottom: 20px;
+}
