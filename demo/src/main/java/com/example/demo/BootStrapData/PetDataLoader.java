@@ -32,14 +32,18 @@ public class PetDataLoader implements CommandLineRunner {
         Pet pet3 = new Pet("Davey", "Mastiff", 3, "Mike Adams");
 
         try {
-            petRepository.save(pet1);
-            System.out.println("Pet 1 saved to database.");
-            
-            petRepository.save(pet2);
-            System.out.println("Pet 2 saved to database.");
-            
-            petRepository.save(pet3);
-            System.out.println("Pet 3 saved to database.");
+            if (!petRepository.existsById(1L)) {
+                petRepository.save(pet1);
+                System.out.println("Pet 1 saved to database.");
+            }
+            if (!petRepository.existsById(2L)) {
+                petRepository.save(pet2);
+                System.out.println("Pet 2 saved to database.");
+            }
+            if (!petRepository.existsById(3L)) {
+                petRepository.save(pet3);
+                System.out.println("Pet 3 saved to database.");
+            }
         } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Error occurred saving pets: " + e);

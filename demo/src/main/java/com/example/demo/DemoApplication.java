@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication(scanBasePackages = "com.example.demo.dao")
-@ComponentScan(basePackages = {"com.example.demo.BootStrapData"})
+@ComponentScan(basePackages = {"com.example.demo.BootStrapData", "com.example.demo.controller"})
 public class DemoApplication {
 
 	public static void main(String[] args) {

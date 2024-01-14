@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,13 +23,13 @@
 <body style="background-color: #ff4c68;">
     <a href="" class="navbar-brand" style="color: white; margin-left: 100px; margin-top: 50px;">tindog</a>
     <div class="row" style="text-align: center;">
-        <div class="pricing-column col-lg-4 col-md-6">
+        <div class="pricing-column col-lg-4 col-md-6" th:each="pet : ${pets}">
           <div class="card" style="box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">
             <div class="card-header">
-              <h3>Penny</h3>
+              <h3 class="name" th:text="${pet.name}"></h3>
             </div>
             <div class="card-body">
-              <h2>Chihuahua</h2>
+              <h2 class="breed" th:text="${pet.breed}"></h2>
           <img src="images/chihuahua.jpg" style="vertical-align: middle;
           border-style: none;
           height: 200px;
@@ -43,10 +43,10 @@
         <div class="pricing-column col-lg-4 col-md-6">
           <div class="card" style="box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">
             <div class="card-header">
-              <h3>Jesse</h3>
+              <h3 class="name" th:text="${pet.name}"></h3>
             </div>
             <div class="card-body">
-              <h2>Labrador</h2>
+              <h2 class="breed" th:text="${pet.breed}"></h2>
               <img src="images/labrador.jpg" style="vertical-align: middle;
               border-style: none;
               height: 200px;
@@ -60,10 +60,10 @@
         <div class="pricing-column col-lg-4">
           <div class="card" style="box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);">
             <div class="card-header">
-              <h3>Davey</h3>
+              <h3 class="name" th:text="${pet.name}"></h3>
             </div>
             <div class="card-body">
-              <h2>Mastiff</h2>
+              <h2 class="breed" th:text="${pet.breed}"></h2>
               <img src="images/mastiff.webp" style="vertical-align: middle;
               border-style: none;
               height: 200px;
