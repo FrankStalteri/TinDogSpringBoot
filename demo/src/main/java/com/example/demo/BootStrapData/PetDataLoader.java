@@ -21,6 +21,7 @@ public class PetDataLoader implements CommandLineRunner {
             saveCreatedPets();
             System.out.println("Pets saved to database.");
         } catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Error occured creating pets: " + e);
         }
     }
@@ -30,9 +31,19 @@ public class PetDataLoader implements CommandLineRunner {
         Pet pet2 = new Pet("Jesse", "Labrador", 3, "Jane Smith");
         Pet pet3 = new Pet("Davey", "Mastiff", 3, "Mike Adams");
 
-        petRepository.save(pet1);
-        petRepository.save(pet2);
-        petRepository.save(pet3);
+        try {
+            petRepository.save(pet1);
+            System.out.println("Pet 1 saved to database.");
+            
+            petRepository.save(pet2);
+            System.out.println("Pet 2 saved to database.");
+            
+            petRepository.save(pet3);
+            System.out.println("Pet 3 saved to database.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("Error occurred saving pets: " + e);
+        }
     }
     
 }
